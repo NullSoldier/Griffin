@@ -38,8 +38,8 @@ namespace ValkyrieMapEditor.Core
 
 		public void LoadContent(GraphicsDevice device, IEngineContext context)
 		{
-			this.EventSprite = Texture2D.FromFile(device, "Graphics/EditorEvent.png");
-			this.SelectionSprite = Texture2D.FromFile(device, "Graphics/EditorSelection.png");
+			this.EventSprite = Helpers.FromFile (device, "Graphics/EditorEvent.png");
+			this.SelectionSprite = Helpers.FromFile (device, "Graphics/EditorSelection.png");
 
 			this.context = context;
 		}

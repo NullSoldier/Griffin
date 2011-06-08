@@ -82,7 +82,7 @@ namespace ValkyrieMapEditor.Core.Components
 			if (!ComponentHelpers.PointInMap(map, startpoint))
 				return;
 
-			spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState, camera.TransformMatrix);
+			spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, camera.TransformMatrix);
 			spriteBatch.Draw(texture, drawloc, Color.White);
 			spriteBatch.End();
 		}

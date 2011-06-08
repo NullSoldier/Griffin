@@ -24,7 +24,7 @@ namespace ValkyrieMapEditor.Core
 
 		public void LoadContent(GraphicsDevice graphicsDevice, IEngineContext context)
 		{
-			this.CollisionSprite = Texture2D.FromFile(graphicsDevice, "Graphics/EditorCollision.png");
+			this.CollisionSprite = Helpers.FromFile(graphicsDevice, "Graphics/EditorCollision.png");
 
 			this.context = context;
 		}

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Valkyrie.Library.Core;
-using Microsoft.Xna.Framework;
 using System.IO;
 using System.Drawing;
 using Valkyrie.Library;

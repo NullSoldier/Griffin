@@ -220,7 +220,7 @@ namespace ValkyrieMapEditor.Core.Components
 			var selecttexture = EditorXNA.CreateSelectRectangle(rect.Width, rect.Height);
 			var startplot = new Vector2(rect.X, rect.Y);
 
-			spritebatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState, camera.TransformMatrix);
+			spritebatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, camera.TransformMatrix);
 			spritebatch.Draw(selecttexture, startplot, Color.White);
 			spritebatch.End();
 		}

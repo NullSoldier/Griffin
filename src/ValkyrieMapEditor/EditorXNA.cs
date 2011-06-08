@@ -143,7 +143,7 @@ namespace ValkyrieMapEditor
 			this.Engine.SceneProvider.Cameras["camera1"].CenterOriginOnPoint(0, 0);
 			this.Engine.SceneProvider.Cameras["camera1"].Load(this.GraphicsDevice);
 
-			this.SelectionSprite = Texture2D.FromFile(this.GraphicsDevice, "Graphics/EditorSelection.png");
+			this.SelectionSprite = Helpers.FromFile (this.GraphicsDevice, "Graphics/EditorSelection.png");
 
 			this.Render.LoadContent(this.GraphicsDevice, this.Engine);
 			foreach (var component in this.componentlist)
@@ -249,7 +249,7 @@ namespace ValkyrieMapEditor
 
 		private void RenderFPS(GameTime gameTime)
 		{
-			float elapsed = (float)gameTime.ElapsedRealTime.TotalSeconds;
+			float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
 			float fps = 1 / elapsed;
 			deltaFPSTime += elapsed;
@@ -299,7 +299,7 @@ namespace ValkyrieMapEditor
 				return null;
 
 			// Create the rectangle texture, but it will have no color! lets fix that
-			Texture2D rectangleTexture = new Texture2D(EditorXNA.graphicsDevice, width, height, 1, TextureUsage.None, SurfaceFormat.Color);
+			Texture2D rectangleTexture = new Texture2D(EditorXNA.graphicsDevice, width, height);
 
 			Color[] color = new Color[width * height]; // Set the color to the amount of pixels
 			Color black = new Color(0, 0, 0, 255);
@@ -354,7 +354,7 @@ namespace ValkyrieMapEditor
 
 		static public Texture2D CreateSelectRectangleFilled(int width, int height, Color border, Color mainfill)
 		{
-			Texture2D texture = new Texture2D(EditorXNA.graphicsDevice, width, height, 1, TextureUsage.None, SurfaceFormat.Color);
+			Texture2D texture = new Texture2D(EditorXNA.graphicsDevice, width, height);
 			Color[] color = new Color[width * height];
 
 			for (int i = 0; i < width * height; i++)

@@ -81,6 +81,7 @@ namespace ValkyrieMapEditor.Core
 			int affected = command.ExecuteNonQuery();
 
 			return (affected > 0);
+			return true;
 		}
 
 		public Dictionary<int, string> GetProfiles ()

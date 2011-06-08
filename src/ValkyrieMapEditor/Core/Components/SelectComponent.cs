@@ -281,7 +281,7 @@ namespace ValkyrieMapEditor.Core.Components
 			var selecttexture = EditorXNA.CreateSelectRectangleFilled(rect.Width, rect.Height, bordercolor, fillcolor);
 			var startplot = new Vector2(rect.X, rect.Y);
 
-			spritebatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState, camera.TransformMatrix);
+			spritebatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, camera.TransformMatrix);
 			spritebatch.Draw(selecttexture, startplot, Color.White);
 			spritebatch.End();
 		}
@@ -295,7 +295,7 @@ namespace ValkyrieMapEditor.Core.Components
 
 			var startpoint = grabbable.GetStartPoint();
 
-			spritebatch.Begin( SpriteBlendMode.AlphaBlend, SpriteSortMode.Immediate, SaveStateMode.SaveState, camera.TransformMatrix);
+			spritebatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, camera.TransformMatrix);
 			foreach (var tile in grabbable.Tiles)
 			{
 				Rectangle destrect = new Rectangle((startpoint.IntX + tile.Offset.IntX ) * map.TileSize, (startpoint.IntY + tile.Offset.IntY) * map.TileSize, map.TileSize, map.TileSize);

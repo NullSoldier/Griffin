@@ -56,7 +56,7 @@ namespace ValkyrieMapEditor.Forms
 		{
 			this.listProfiles.Items.Clear();
 
-			int currentprofileid = Program.Settings.CurrentProfileID;
+			int currentprofileid = 0;//Warning Program.Settings.CurrentProfileID;
 
 			foreach(var profile in Program.Settings.GetProfiles())
 			{
