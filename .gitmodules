@@ -1,0 +1,3 @@
+[submodule "src/Valkyrie"]
+	path = src/Valkyrie
+	url = git@github.com:NullSoldier/Valkyrie.git
