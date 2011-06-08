@@ -14,7 +14,7 @@ namespace ValkyrieMapEditor
 		///
 		public static SettingsManager Settings = new SettingsManager();
 
-		//[STAThreadAttribute]
+		[STAThreadAttribute]
 		static void Main(string[] args)
 		{
 			if (!Debugger.IsAttached)
@@ -36,7 +36,7 @@ namespace ValkyrieMapEditor
 
 		static void Program_UnhandledException(object sender, UnhandledExceptionEventArgs ev)
 		{
-			//MessageBox.Show(((Exception)ev.ExceptionObject).Message + Environment.NewLine + Environment.NewLine + ((Exception)ev.ExceptionObject).StackTrace, "Error!", MessageBoxButtons.OK);
+			MessageBox.Show(((Exception)ev.ExceptionObject).Message + Environment.NewLine + Environment.NewLine + ((Exception)ev.ExceptionObject).StackTrace, "Error!", MessageBoxButtons.OK);
 		}
 
 	}
